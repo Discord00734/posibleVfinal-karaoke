@@ -940,6 +940,13 @@ body {
 
 .red-social-icon {
   font-size: 1.2rem;
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+}
+
+.red-social:hover .red-social-icon {
+  transform: scale(1.1);
 }
 
 /* Facebook */
