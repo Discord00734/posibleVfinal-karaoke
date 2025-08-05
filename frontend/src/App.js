@@ -340,19 +340,64 @@ function App() {
           <h2 className="section-title">ALIADOS EN LA GUERRA</h2>
           <div className="marcas-container">
             <div className="marca-item">
-              <div className="marca-logo">PVA</div>
+              <div className="marca-logo-container">
+                <img 
+                  src="/api/placeholder/120/80" 
+                  alt="PVA Logo"
+                  className="marca-logo-img"
+                  onError={(e) => {e.target.style.display = 'none'}}
+                />
+                <div className="marca-logo-text">PVA</div>
+              </div>
+              <div className="marca-name">PVA</div>
             </div>
             <div className="marca-item">
-              <div className="marca-logo">IMPACTOS DIGITALES</div>
+              <div className="marca-logo-container">
+                <img 
+                  src="/api/placeholder/120/80" 
+                  alt="Impactos Digitales Logo"
+                  className="marca-logo-img"
+                  onError={(e) => {e.target.style.display = 'none'}}
+                />
+                <div className="marca-logo-text">IMPACTOS DIGITALES</div>
+              </div>
+              <div className="marca-name">IMPACTOS DIGITALES</div>
             </div>
             <div className="marca-item">
-              <div className="marca-logo">CLUB DE LEONES</div>
+              <div className="marca-logo-container">
+                <img 
+                  src="/api/placeholder/120/80" 
+                  alt="Club de Leones Logo"
+                  className="marca-logo-img"
+                  onError={(e) => {e.target.style.display = 'none'}}
+                />
+                <div className="marca-logo-text">CLUB DE LEONES</div>
+              </div>
+              <div className="marca-name">CLUB DE LEONES</div>
             </div>
             <div className="marca-item">
-              <div className="marca-logo">RADIO UAQ</div>
+              <div className="marca-logo-container">
+                <img 
+                  src="/api/placeholder/120/80" 
+                  alt="Radio UAQ Logo"
+                  className="marca-logo-img"
+                  onError={(e) => {e.target.style.display = 'none'}}
+                />
+                <div className="marca-logo-text">RADIO UAQ</div>
+              </div>
+              <div className="marca-name">RADIO UAQ</div>
             </div>
             <div className="marca-item">
-              <div className="marca-logo">CIJ</div>
+              <div className="marca-logo-container">
+                <img 
+                  src="/api/placeholder/120/80" 
+                  alt="CIJ Logo"
+                  className="marca-logo-img"
+                  onError={(e) => {e.target.style.display = 'none'}}
+                />
+                <div className="marca-logo-text">CIJ</div>
+              </div>
+              <div className="marca-name">CIJ</div>
             </div>
           </div>
         </div>
