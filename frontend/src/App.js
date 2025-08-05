@@ -79,6 +79,15 @@ function App() {
         <div className="hero-overlay">
           <div className="hero-content">
             <div className="logo-container">
+              {/* Espacio reservado para logo oficial - se agregará después */}
+              <div className="official-logo-placeholder">
+                <img 
+                  src="/api/placeholder/200/100" 
+                  alt="Karaoke Sensō Logo"
+                  className="official-logo"
+                  onError={(e) => {e.target.style.display = 'none'}}
+                />
+              </div>
               <h1 className="hero-title">KARAOKE SENSŌ</h1>
               <p className="hero-subtitle">戦争</p>
             </div>
