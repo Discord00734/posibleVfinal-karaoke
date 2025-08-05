@@ -81,11 +81,19 @@ function App() {
             <div className="logo-container">
               {/* Espacio reservado para logo oficial - se agregará después */}
               <div className="official-logo-placeholder">
+                <div className="logo-upload-area">
+                  <div className="logo-placeholder-icon">🎤</div>
+                  <p className="logo-placeholder-text">LOGO OFICIAL</p>
+                  <p className="logo-placeholder-subtitle">Karaoke Sensō</p>
+                </div>
                 <img 
-                  src="/api/placeholder/200/100" 
-                  alt="Karaoke Sensō Logo"
+                  src="/logo-senso.png" 
+                  alt="Karaoke Sensō Logo Oficial"
                   className="official-logo"
-                  onError={(e) => {e.target.style.display = 'none'}}
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.querySelector('.logo-upload-area').style.display = 'flex';
+                  }}
                 />
               </div>
               <h1 className="hero-title">KARAOKE SENSŌ</h1>
