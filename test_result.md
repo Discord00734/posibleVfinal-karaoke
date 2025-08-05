@@ -222,10 +222,10 @@ metadata:
 
 test_plan:
   current_focus:
-    - "API endpoints para inscripciones"
+    - "Landing page completa con diseño dorado/negro"
     - "Sistema de inscripción funcional con formulario"
     - "Estadísticas en tiempo real"
-    - "Landing page completa con diseño dorado/negro"
+    - "Estilos con paleta dorada/negra"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
