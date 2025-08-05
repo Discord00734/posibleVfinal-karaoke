@@ -347,66 +347,110 @@ function App() {
         <div className="container">
           <h2 className="section-title">ALIADOS EN LA GUERRA</h2>
           <div className="marcas-container">
-            <div className="marca-item">
+            <a href="#" className="marca-item" data-marca="pva">
               <div className="marca-logo-container">
+                <div className="logo-upload-area">
+                  <div className="logo-placeholder-icon">🏢</div>
+                  <p className="logo-placeholder-mini">LOGO</p>
+                </div>
                 <img 
-                  src="/api/placeholder/120/80" 
+                  src="/logos/pva-logo.png" 
                   alt="PVA Logo"
                   className="marca-logo-img"
-                  onError={(e) => {e.target.style.display = 'none'}}
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.querySelector('.logo-upload-area').style.display = 'flex';
+                  }}
                 />
                 <div className="marca-logo-text">PVA</div>
               </div>
               <div className="marca-name">PVA</div>
-            </div>
-            <div className="marca-item">
+              <p className="marca-description">Aliado estratégico</p>
+            </a>
+            
+            <a href="#" className="marca-item" data-marca="impactos-digitales">
               <div className="marca-logo-container">
+                <div className="logo-upload-area">
+                  <div className="logo-placeholder-icon">💻</div>
+                  <p className="logo-placeholder-mini">LOGO</p>
+                </div>
                 <img 
-                  src="/api/placeholder/120/80" 
+                  src="/logos/impactos-digitales-logo.png" 
                   alt="Impactos Digitales Logo"
                   className="marca-logo-img"
-                  onError={(e) => {e.target.style.display = 'none'}}
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.querySelector('.logo-upload-area').style.display = 'flex';
+                  }}
                 />
                 <div className="marca-logo-text">IMPACTOS DIGITALES</div>
               </div>
               <div className="marca-name">IMPACTOS DIGITALES</div>
-            </div>
-            <div className="marca-item">
+              <p className="marca-description">Partner digital</p>
+            </a>
+            
+            <a href="#" className="marca-item" data-marca="club-leones">
               <div className="marca-logo-container">
+                <div className="logo-upload-area">
+                  <div className="logo-placeholder-icon">🦁</div>
+                  <p className="logo-placeholder-mini">LOGO</p>
+                </div>
                 <img 
-                  src="/api/placeholder/120/80" 
+                  src="/logos/club-leones-logo.png" 
                   alt="Club de Leones Logo"
                   className="marca-logo-img"
-                  onError={(e) => {e.target.style.display = 'none'}}
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.querySelector('.logo-upload-area').style.display = 'flex';
+                  }}
                 />
                 <div className="marca-logo-text">CLUB DE LEONES</div>
               </div>
               <div className="marca-name">CLUB DE LEONES</div>
-            </div>
-            <div className="marca-item">
+              <p className="marca-description">Organización social</p>
+            </a>
+            
+            <a href="#" className="marca-item" data-marca="radio-uaq">
               <div className="marca-logo-container">
+                <div className="logo-upload-area">
+                  <div className="logo-placeholder-icon">📻</div>
+                  <p className="logo-placeholder-mini">LOGO</p>
+                </div>
                 <img 
-                  src="/api/placeholder/120/80" 
+                  src="/logos/radio-uaq-logo.png" 
                   alt="Radio UAQ Logo"
                   className="marca-logo-img"
-                  onError={(e) => {e.target.style.display = 'none'}}
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.querySelector('.logo-upload-area').style.display = 'flex';
+                  }}
                 />
                 <div className="marca-logo-text">RADIO UAQ</div>
               </div>
               <div className="marca-name">RADIO UAQ</div>
-            </div>
-            <div className="marca-item">
+              <p className="marca-description">Media partner</p>
+            </a>
+            
+            <a href="#" className="marca-item" data-marca="cij">
               <div className="marca-logo-container">
+                <div className="logo-upload-area">
+                  <div className="logo-placeholder-icon">🏛️</div>
+                  <p className="logo-placeholder-mini">LOGO</p>
+                </div>
                 <img 
-                  src="/api/placeholder/120/80" 
+                  src="/logos/cij-logo.png" 
                   alt="CIJ Logo"
                   className="marca-logo-img"
-                  onError={(e) => {e.target.style.display = 'none'}}
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.querySelector('.logo-upload-area').style.display = 'flex';
+                  }}
                 />
                 <div className="marca-logo-text">CIJ</div>
               </div>
               <div className="marca-name">CIJ</div>
-            </div>
+              <p className="marca-description">Instituto colaborador</p>
+            </a>
           </div>
         </div>
       </section>
