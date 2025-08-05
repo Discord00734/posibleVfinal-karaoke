@@ -602,6 +602,13 @@ body {
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.marca-item:visited {
+  color: inherit;
 }
 
 .marca-item::before {
@@ -623,15 +630,52 @@ body {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3);
   border-color: var(--rojo-fuego);
+  text-decoration: none;
+  color: inherit;
 }
 
 .marca-logo-container {
   position: relative;
   margin-bottom: 15px;
-  min-height: 80px;
+  min-height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+}
+
+.logo-upload-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(0, 0, 0, 0.3));
+  border: 2px dashed rgba(212, 175, 55, 0.4);
+  border-radius: 10px;
+  padding: 20px;
+  min-width: 100px;
+  min-height: 80px;
+  transition: all 0.3s ease;
+}
+
+.logo-placeholder-icon {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  filter: sepia(100%) hue-rotate(38deg) brightness(1.1);
+}
+
+.logo-placeholder-mini {
+  color: var(--dorado-claro);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.marca-item:hover .logo-upload-area {
+  border-color: var(--rojo-fuego);
+  background: linear-gradient(135deg, rgba(226, 88, 34, 0.1), rgba(0, 0, 0, 0.4));
 }
 
 .marca-logo-img {
@@ -640,15 +684,20 @@ body {
   object-fit: contain;
   filter: brightness(1.1) contrast(1.1);
   transition: all 0.3s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .marca-logo-text {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 900;
   color: var(--dorado-claro);
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  margin-top: 10px;
 }
 
 .marca-name {
@@ -658,16 +707,34 @@ body {
   letter-spacing: 1px;
   text-transform: uppercase;
   opacity: 0.9;
+  margin-bottom: 8px;
+}
+
+.marca-description {
+  font-size: 0.85rem;
+  color: #cccccc;
+  font-style: italic;
+  font-weight: 400;
+  opacity: 0.8;
 }
 
 .marca-item:hover .marca-logo-img {
-  transform: scale(1.1);
+  transform: translate(-50%, -50%) scale(1.1);
   filter: brightness(1.3) contrast(1.2) drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
 }
 
 .marca-item:hover .marca-logo-text {
   color: var(--rojo-fuego);
   text-shadow: 0 0 10px rgba(226, 88, 34, 0.6);
+}
+
+.marca-item:hover .marca-name {
+  color: var(--dorado-claro);
+}
+
+.marca-item:hover .marca-description {
+  color: var(--blanco-puro);
+  opacity: 1;
 }
 
 /* SUBIDA DE VIDEO */
