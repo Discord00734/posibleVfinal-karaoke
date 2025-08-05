@@ -42,7 +42,8 @@ def get_db():
 def test_connection():
     try:
         with engine.connect() as connection:
-            result = connection.execute("SELECT 1 as test")
+            from sqlalchemy import text
+            result = connection.execute(text("SELECT 1 as test"))
             return True
     except Exception as e:
         print(f"Error de conexión a la base de datos: {e}")
