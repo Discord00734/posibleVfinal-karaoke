@@ -476,9 +476,18 @@ function App() {
               <div className="contacto-icon">🌐</div>
               <h3>Redes Sociales</h3>
               <div className="redes-sociales">
-                <a href="#" className="red-social">Facebook</a>
-                <a href="#" className="red-social">Instagram</a>
-                <a href="#" className="red-social">TikTok</a>
+                <a href="#" className="red-social facebook">
+                  <span className="red-social-icon">📘</span>
+                  <span>Facebook</span>
+                </a>
+                <a href="#" className="red-social instagram">
+                  <span className="red-social-icon">📷</span>
+                  <span>Instagram</span>
+                </a>
+                <a href="#" className="red-social tiktok">
+                  <span className="red-social-icon">🎵</span>
+                  <span>TikTok</span>
+                </a>
               </div>
             </div>
           </div>
