@@ -12,7 +12,7 @@ from datetime import datetime
 from typing import Dict, Any
 
 # Configuration
-BASE_URL = "https://6fa6ae83-a779-483e-aaf6-16bcda0c31b6.preview.emergentagent.com/api"
+BASE_URL = "https://de385889-24f3-4f3a-8093-6fa1171f68ea.preview.emergentagent.com/api"
 TIMEOUT = 30
 
 # Test data as specified in the review request
