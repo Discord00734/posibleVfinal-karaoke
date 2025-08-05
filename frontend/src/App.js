@@ -1,18 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { AuthProvider } from "./contexts/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
+import AdminLogin from "./components/AdminLogin";
+import AdminLayout from "./components/AdminLayout";
+import Dashboard from "./components/admin/Dashboard";
+import Inscripciones from "./components/admin/Inscripciones";
 import "./App.css";
 import axios from "axios";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
-function App() {
-  const [estadisticas, setEstadisticas] = useState({
+// Configurar axios
+axios.defaults.baseURL = BACKEND_URL;
+
+// Componente de Landing Page original
+function LandingPage() {
+  const [estadisticas, setEstadisticas] = React.useState({
     total_inscritos: 0,
     total_municipios: 0,
     total_votos: 0
   });
-  const [formularioVisible, setFormularioVisible] = useState(false);
-  const [inscripcion, setInscripcion] = useState({
+  const [formularioVisible, setFormularioVisible] = React.useState(false);
+  const [inscripcion, setInscripcion] = React.useState({
     nombre_completo: '',
     nombre_artistico: '',
     telefono: '',
@@ -21,11 +32,11 @@ function App() {
     municipio: '',
     sede: ''
   });
-  const [enviando, setEnviando] = useState(false);
-  const [mensaje, setMensaje] = useState('');
+  const [enviando, setEnviando] = React.useState(false);
+  const [mensaje, setMensaje] = React.useState('');
 
   // Cargar estadísticas al iniciar
-  useEffect(() => {
+  React.useEffect(() => {
     cargarEstadisticas();
   }, []);
 
@@ -568,6 +579,48 @@ function App() {
         </div>
       </footer>
     </div>
+  );
+}
+
+// Componente principal con router
+function App() {
+  return (
+    <AuthProvider>
+      <Router>
+        <Routes>
+          {/* Ruta pública - Landing Page */}
+          <Route path="/" element={<LandingPage />} />
+          
+          {/* Rutas de administración */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          
+          {/* Panel de administración protegido */}
+          <Route 
+            path="/admin/panel" 
+            element={
+              <ProtectedRoute requiredRole="jurado">
+                <AdminLayout />
+              </ProtectedRoute>
+            }
+          >
+            {/* Dashboard por defecto */}
+            <Route index element={<Navigate to="dashboard" replace />} />
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="inscripciones" element={<Inscripciones />} />
+            
+            {/* Placeholder routes - se implementarán después */}
+            <Route path="sedes" element={<div className="text-white text-center p-8">Gestión de Sedes - En desarrollo</div>} />
+            <Route path="rondas" element={<div className="text-white text-center p-8">Gestión de Rondas - En desarrollo</div>} />
+            <Route path="resultados" element={<div className="text-white text-center p-8">Carga de Resultados - En desarrollo</div>} />
+            <Route path="videos" element={<div className="text-white text-center p-8">Control de Videos - En desarrollo</div>} />
+            <Route path="reportes" element={<div className="text-white text-center p-8">Reportes y Estadísticas - En desarrollo</div>} />
+          </Route>
+          
+          {/* Redirección por defecto */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
 
