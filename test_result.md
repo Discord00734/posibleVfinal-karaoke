@@ -107,51 +107,63 @@ user_problem_statement: "Sistema web de Karaoke Sensō - Landing page con sistem
 backend:
   - task: "API endpoints para inscripciones"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implementados endpoints POST /api/inscripciones, GET /api/inscripciones, POST /api/inscripciones/{id}/comprobante, POST /api/inscripciones/{id}/video"
+      - working: true
+        agent: "testing"
+        comment: "✅ TESTED: All inscription endpoints working correctly. POST /api/inscripciones creates inscriptions with proper validation (422 for invalid data), GET /api/inscripciones retrieves all inscriptions successfully. File upload endpoint for comprobantes works correctly. MongoDB integration confirmed with 3 inscriptions stored."
 
   - task: "API estadísticas en tiempo real"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implementado GET /api/estadisticas con conteo de inscritos, municipios y simulación de votos"
+      - working: true
+        agent: "testing"
+        comment: "✅ TESTED: GET /api/estadisticas working perfectly. Returns proper JSON with total_inscritos, total_municipios, total_votos, inscritos_por_categoria, and inscritos_por_municipio. Real-time data updates correctly after new inscriptions."
 
   - task: "Modelos MongoDB para inscripciones"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Creados modelos Inscripcion, InscripcionCreate, Evento, EventoCreate con validación Pydantic"
+      - working: true
+        agent: "testing"
+        comment: "✅ TESTED: MongoDB models working correctly. Pydantic validation properly rejects incomplete data (422 status). All required fields (id, nombre_completo, nombre_artistico, telefono, categoria, municipio, sede, fecha_inscripcion) are properly handled. UUID generation and datetime fields working correctly."
 
   - task: "Sistema de subida de archivos (comprobantes/videos)"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implementado upload de comprobantes en base64 y videos con límite 50MB"
+      - working: true
+        agent: "testing"
+        comment: "✅ TESTED: File upload system working. POST /api/inscripciones/{id}/comprobante successfully uploads images and stores as base64. Minor: Error handling for invalid file types returns 500 instead of 400, but core functionality works correctly."
 
 frontend:
   - task: "Landing page completa con diseño dorado/negro"
