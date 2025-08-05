@@ -531,7 +531,7 @@ body {
   border: 2px solid #dc3545;
 }
 
-/* SLIDER DE MARCAS */
+/* SLIDER DE MARCAS MEJORADO */
 .marcas-slider {
   padding: 80px 0;
   background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
@@ -539,32 +539,88 @@ body {
 
 .marcas-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
 .marca-item {
   background: linear-gradient(135deg, #2a2a2a, #3a3a3a);
   border: 2px solid var(--dorado-claro);
-  padding: 40px 20px;
+  padding: 30px 20px;
   border-radius: 12px;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.marca-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+  transition: left 0.6s;
+}
+
+.marca-item:hover::before {
+  left: 100%;
 }
 
 .marca-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3);
   border-color: var(--rojo-fuego);
 }
 
-.marca-logo {
-  font-size: 1.4rem;
+.marca-logo-container {
+  position: relative;
+  margin-bottom: 15px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marca-logo-img {
+  max-width: 120px;
+  max-height: 80px;
+  object-fit: contain;
+  filter: brightness(1.1) contrast(1.1);
+  transition: all 0.3s ease;
+}
+
+.marca-logo-text {
+  font-size: 1.2rem;
   font-weight: 900;
   color: var(--dorado-claro);
   letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.marca-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--blanco-puro);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.marca-item:hover .marca-logo-img {
+  transform: scale(1.1);
+  filter: brightness(1.3) contrast(1.2) drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
+}
+
+.marca-item:hover .marca-logo-text {
+  color: var(--rojo-fuego);
+  text-shadow: 0 0 10px rgba(226, 88, 34, 0.6);
 }
 
 /* SUBIDA DE VIDEO */
